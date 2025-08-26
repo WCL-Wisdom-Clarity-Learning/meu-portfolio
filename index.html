@@ -1,41 +1,287 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-widht, initial-scale=1.0">
-	    <title>Meu Portfólio</title>
-	    <script src="https://cdn.jsdeivr.net/npm/chart.js"></script>
-	<style>
-	    body { font-family: Arial, sans-serif; margin: 20px; }
-	    h1 { color: #2c3e50; }
-	    canvas { max-width: 600px; margin: 20px 0; }
-	</style>
-    <head>
-<boddy>
-	    <h1>Bem-vindo ao meu Portfólio</h1>
-	    <p>Aqui você verá meus projetos e alguns gráficos de dados.</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Portfólio</title>
 
-	    <h2>Exemplo de Gráfico</h2>
-	    <canvas id="meuGrafico"></canvas>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-<script>
-	const ctx = document.getElementByld('meuGrafico');
+  <!-- Estilos -->
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --card: #fff;
+      --btn: #2ecc71;
+      --btn-hover: #27ae60;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1e1e1e;
+      --btn: #3498db;
+      --btn-hover: #2980b9;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      transition: 0.3s;
+    }
+
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dark-mode header {
+      background-color: #2980b9;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: var(--card);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    canvas {
+      margin-top: 30px;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    #contato {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .botao-contato {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: var(--btn);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .botao-contato i {
+      margin-right: 8px;
+    }
+
+    .botao-contato:hover {
+      background-color: var(--btn-hover);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background: var(--card);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    button[type="submit"] {
+      background-color: var(--btn);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .modo-escuro-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: var(--btn);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .botao-contato {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        font-size: 18px;
+      }
+
+      .modo-escuro-btn {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão do modo escuro -->
+  <button class="modo-escuro-btn" onclick="alternarModo()">🌙 Modo Escuro</button>
+
+  <header>
+    <h1>Bem-vindo ao meu Portfólio</h1>
+    <p>Veja meus projetos e gráficos de dados</p>
+  </header>
+
+  <main>
+    <!-- Gráfico 1 -->
+    <h2>Horas dedicadas por projeto</h2>
+    <canvas id="meuGrafico"></canvas>
+
+    <!-- Gráfico 2 -->
+    <h2>Horas de estudo por semana</h2>
+    <canvas id="graficoEstudo"></canvas>
+  </main>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2>Entre em contato</h2>
+    <a href="mailto:seuemail@email.com" class="botao-contato">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+    <a href="https://www.linkedin.com/in/seuperfil" target="_blank" class="botao-contato">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/seuusuario" target="_blank" class="botao-contato">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+
+    <!-- Formulário real via FormSubmit -->
+    <form action="https://formsubmit.co/seuemail@email.com" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar mensagem</button>
+
+      <!-- Proteções extras -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 - W.C.L | Meu Portfólio
+  </footer>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Gráfico 1 -->
+  <script>
+    const ctx = document.getElementById('meuGrafico');
     new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Projeto A', 'Projeto B', 'Projeto C'],
-            datasets: [{
-                label: 'Horas dedicadas',
-                data: [12, 19, 7],
-                bordeWidth: 1,
-                backgroundColor: ['#3498db', '#2ecc71', '#e74c3c']
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: { y: { beginAtZero: true } }
+      type: 'bar',
+      data: {
+        labels: ['Projeto A', 'Projeto B', 'Projeto C'],
+        datasets: [{
+          label: 'Horas dedicadas',
+          data: [12, 19, 7],
+          borderWidth: 1,
+          backgroundColor: ['#3498db', '#2ecc71', '#e74c3c']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
         }
+      }
     });
-</script>
-</boddy>
+  </script>
+
+  <!-- Gráfico 2 -->
+  <script>
+    const ctx2 = document.getElementById('graficoEstudo');
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        datasets: [{
+          label: 'Horas de estudo',
+          data: [2, 3, 1, 4, 3.5, 5, 2],
+          borderColor: '#9b59b6',
+          backgroundColor: 'rgba(155, 89, 182, 0.2)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+
+  <!-- Script Modo Escuro -->
+  <script>
+    function alternarModo() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('modoEscuro', document.body.classList.contains('dark-mode'));
+    }
+
+    // Manter escolha do usuário
+    window.onload = () => {
+      if (localStorage.getItem('modoEscuro') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    };
+  </script>
+
+</body>
 </html>

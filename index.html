@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+	    <title>Meu Portfólio</title>
+	    <script src="https://cdn.jsdeivr.net/npm/chart.js"></script>
+	<style>
+	    body { font-family: Arial, sans-serif; margin: 20px; }
+	    h1 { color: #2c3e50; }
+	    canvas { max-width: 600px; margin: 20px 0; }
+	</style>
+    <head>
+<boddy>
+	    <h1>Bem-vindo ao meu Portfólio</h1>
+	    <p>Aqui você verá meus projetos e alguns gráficos de dados.</p>
+
+	    <h2>Exemplo de Gráfico</h2>
+	    <canvas id="meuGrafico"></canvas>
+
+<script>
+	const ctx = document.getElementByld('meuGrafico');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Projeto A', 'Projeto B', 'Projeto C'],
+            datasets: [{
+                label: 'Horas dedicadas',
+                data: [12, 19, 7],
+                bordeWidth: 1,
+                backgroundColor: ['#3498db', '#2ecc71', '#e74c3c']
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+</script>
+</boddy>
+</html>

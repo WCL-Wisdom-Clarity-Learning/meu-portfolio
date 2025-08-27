@@ -1,62 +1,134 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #5c7a8f;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #2b6d99;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 main {
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 canvas {
-    margin-top: 30px;
-    max-width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fff;
+  margin-top: 30px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
 }
 
 #contato {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .botao-contato {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #2ecc71;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 .botao-contato:hover {
-    background-color: #27ae60;
+  background-color: #27ae60;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, button {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* Botão modo escuro fixo no canto superior direito */
+.modo-escuro-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Estilo modo escuro */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode main,
+.dark-mode header,
+.dark-mode canvas,
+.dark-mode footer,
+.dark-mode #contato {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark-mode .botao-contato {
+  background-color: #555;
+}
+
+.dark-mode .botao-contato:hover {
+  background-color: #777;
 }

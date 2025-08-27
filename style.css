@@ -94,13 +94,15 @@ button:hover {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #444;
+  background-color: #444;
   color: white;
   border: none;
   padding: 10px 15px;
+  font-size: 14px;
   border-radius: 20px;
   cursor: pointer;
   z-index: 1000;
+  width: auto; /* garante que não fique largo demais */
 }
 
 /* Estilo modo escuro */

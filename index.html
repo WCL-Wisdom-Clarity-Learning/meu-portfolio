@@ -2,60 +2,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meu Portfólio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
+  <!-- Fontes e estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
   <style>
-    :root {
-      --bg: #f4f4f4;
-      --text: #333;
-      --card: #fff;
-      --btn: #2ecc71;
-      --btn-hover: #27ae60;
-    }
-
-    body.dark-mode {
-      --bg: #121212;
-      --text: #eee;
-      --card: #1e1e1e;
-      --btn: #3498db;
-      --btn-hover: #2980b9;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      transition: 0.3s;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background-color: #3498db;
+      background-color: #2b6d99;
       color: white;
       padding: 20px;
       text-align: center;
     }
 
-    .dark-mode header {
-      background-color: #2980b9;
-    }
-
     main {
       max-width: 800px;
       margin: 40px auto;
-      background-color: var(--card);
+      background-color: white;
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     h1, h2 {
@@ -77,142 +52,134 @@
       color: #888;
     }
 
-    #contato {
+    section#contato {
       text-align: center;
-      margin: 40px 0;
+      margin: 50px 0;
     }
 
     .botao-contato {
       display: inline-block;
       margin: 10px;
       padding: 12px 20px;
-      background-color: var(--btn);
+      background-color: #3073a0;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 6px;
       transition: background 0.3s;
     }
 
-    .botao-contato i {
-      margin-right: 8px;
-    }
-
     .botao-contato:hover {
-      background-color: var(--btn-hover);
+      background-color: #2980b9;
     }
 
     form {
       max-width: 600px;
       margin: 20px auto;
-      background: var(--card);
-      padding: 20px;
-      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
+    input, textarea, button {
+      padding: 12px;
+      font-size: 16px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: var(--bg);
-      color: var(--text);
+      border-radius: 5px;
+      width: 100%;
     }
 
-    button[type="submit"] {
-      background-color: var(--btn);
+    button {
+      background-color: #2ecc71;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
       cursor: pointer;
-      transition: 0.3s;
     }
 
-    button[type="submit"]:hover {
-      background-color: var(--btn-hover);
+    button:hover {
+      background-color: #27ae60;
     }
 
     .modo-escuro-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 10px 15px;
-      background: var(--btn);
+      background: #444;
       color: white;
       border: none;
-      border-radius: 5px;
+      padding: 10px 15px;
+      border-radius: 20px;
       cursor: pointer;
-      z-index: 999;
+      z-index: 1000;
     }
 
-    @media (max-width: 600px) {
-      main {
-        margin: 20px;
-        padding: 20px;
-      }
+    /* Modo escuro */
+    .dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
 
-      .botao-contato {
-        display: block;
-        width: 80%;
-        margin: 10px auto;
-        font-size: 18px;
-      }
+    .dark-mode main,
+    .dark-mode header,
+    .dark-mode canvas,
+    .dark-mode footer,
+    .dark-mode section#contato {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
 
-      .modo-escuro-btn {
-        top: 10px;
-        right: 10px;
-      }
+    .dark-mode input,
+    .dark-mode textarea {
+      background-color: #2c2c2c;
+      color: #f1f1f1;
+      border: 1px solid #555;
+    }
+
+    .dark-mode .botao-contato {
+      background-color: #555;
+    }
+
+    .dark-mode .botao-contato:hover {
+      background-color: #777;
     }
   </style>
 </head>
-<body>
 
-  <!-- Botão do modo escuro -->
+<body>
+  <!-- Botão modo escuro -->
   <button class="modo-escuro-btn" onclick="alternarModo()">🌙 Modo Escuro</button>
 
+  <!-- Cabeçalho -->
   <header>
     <h1>Bem-vindo ao meu Portfólio</h1>
     <p>Veja meus projetos e gráficos de dados</p>
   </header>
 
+  <!-- Gráfico de estudo -->
   <main>
-    <!-- Gráfico 1 -->
-    <h2>Horas dedicadas por projeto</h2>
-    <canvas id="meuGrafico"></canvas>
-
-    <!-- Gráfico 2 -->
     <h2>Horas de estudo por semana</h2>
     <canvas id="graficoEstudo"></canvas>
+
+    <h2>Horas dedicadas por projeto</h2>
+    <canvas id="meuGrafico"></canvas>
   </main>
 
-  <!-- CONTATO -->
+  <!-- Contato -->
   <section id="contato">
     <h2>Entre em contato</h2>
-    <a href="mailto:seuemail@email.com" class="botao-contato">
-      <i class="fas fa-envelope"></i> Email
-    </a>
-    <a href="https://www.linkedin.com/in/seuperfil" target="_blank" class="botao-contato">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://github.com/seuusuario" target="_blank" class="botao-contato">
-      <i class="fab fa-github"></i> GitHub
-    </a>
+    <a href="Wellington:wellingtonboti01@gmail.com" class="botao-contato">✉️ Email</a>
+    <a href="www.linkedin.com/in/wellington-wcl-dados" target="_blank" class="botao-contato">🔗 LinkedIn</a>
+    <a href="https://github.com/WCL-Wisdom-Clarity-Learning" target="_blank" class="botao-contato">💻 GitHub</a>
 
-    <!-- Formulário real via FormSubmit -->
-    <form action="https://formsubmit.co/seuemail@email.com" method="POST">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu e-mail" required>
-      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-      <button type="submit">Enviar mensagem</button>
-
-      <!-- Proteções extras -->
+    <form action="https://formsubmit.co/wellingtonboti01@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+      <input type="text" name="name" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="message" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
+  <!-- Rodapé -->
   <footer>
     &copy; 2025 - W.C.L | Meu Portfólio
   </footer>
@@ -220,10 +187,9 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Gráfico 1 -->
   <script>
-    const ctx = document.getElementById('meuGrafico');
-    new Chart(ctx, {
+    const ctx1 = document.getElementById('meuGrafico');
+    new Chart(ctx1, {
       type: 'bar',
       data: {
         labels: ['Projeto A', 'Projeto B', 'Projeto C'],
@@ -237,14 +203,13 @@
       options: {
         responsive: true,
         scales: {
-          y: { beginAtZero: true }
+          y: {
+            beginAtZero: true
+          }
         }
       }
     });
-  </script>
 
-  <!-- Gráfico 2 -->
-  <script>
     const ctx2 = document.getElementById('graficoEstudo');
     new Chart(ctx2, {
       type: 'line',
@@ -262,26 +227,25 @@
       options: {
         responsive: true,
         scales: {
-          y: { beginAtZero: true }
+          y: {
+            beginAtZero: true
+          }
         }
       }
     });
-  </script>
 
-  <!-- Script Modo Escuro -->
-  <script>
+    // Modo escuro
     function alternarModo() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('modoEscuro', document.body.classList.contains('dark-mode'));
     }
 
-    // Manter escolha do usuário
+    // Manter modo escuro ativado se usuário já ativou
     window.onload = () => {
       if (localStorage.getItem('modoEscuro') === 'true') {
         document.body.classList.add('dark-mode');
       }
     };
   </script>
-
 </body>
 </html>

@@ -158,3 +158,27 @@ body.dark .welcome {
   text-align: justify; /* deixa o texto mais agradável */
   line-height: 1.6;   /* melhora a leitura */
 }
+
+/* Classe genérica para centralizar texto em todas as páginas */
+.content {
+  max-width: 900px;     /* controla a largura do bloco */
+  margin: 0 auto;       /* centraliza o container na página */
+  padding: 1rem;        /* dá respiro interno */
+  text-align: justify;  /* deixa o texto mais agradável */
+  line-height: 1.6;     /* melhora a leitura */
+}
+
+/* Centraliza títulos dentro do conteúdo */
+.content h1,
+.content h2,
+.content h3 {
+  text-align: center;
+}
+
+/* Imagens dentro do conteúdo (não afeta logo do header) */
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto; /* espaço acima e abaixo, centraliza horizontal */
+}

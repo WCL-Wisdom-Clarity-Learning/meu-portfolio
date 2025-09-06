@@ -13,99 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS externo -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* Ajustes solicitados */
-    .content {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .content h1 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    .content p {
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
-      text-align: justify;
-      line-height: 1.8;
-    }
-
-    .image-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .image-gallery img {
-      max-width: 45%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Espaço para Ads */
-    #ads-space {
-      margin-top: 1rem;
-      padding: 1rem;
-      border: 2px dashed #ff6a00;
-      border-radius: 8px;
-      background: #fff3e6;
-      font-size: 0.95rem;
-      color: #333;
-    }
-
-    /* Hambúrguer */
-    .hamburger {
-      display: none;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 3px;
-      margin: 5px 0;
-      background: #fff;
-    }
-
-    .mobile-only { display: none; }
-    .desktop-only { display: inline-block; }
-
-    /* Mobile */
-    @media (max-width: 1100px) {
-      .hamburger { display: block; }
-      .desktop-only { display: none; }
-      .mobile-only { display: block; }
-
-      .menu {
-        position: absolute;
-        top: 100%;
-        left: 0; right: 0;
-        background: #0d1117;
-        display: none;
-        padding: 1rem;
-      }
-      .menu.open { display: block; }
-
-      .menu ul {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .site-header .wrap {
-        justify-content: flex-start;
-        gap: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css?v=1.0">
 </head>
 <body>
   <!-- HEADER -->
@@ -113,11 +21,13 @@
     <div class="container wrap">
 
       <!-- Botão hambúrguer -->
-      <button class="hamburger" id="menuToggle">
+      <button class="hamburger" id="menuToggle"
               aria-controls="primary-menu"
               aria-expanded="false"
               aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <!-- Logo -->
@@ -138,8 +48,6 @@
           <li><a href="pages/noticias.html">Notícias</a></li>
           <!-- Contato só no mobile -->
           <li class="mobile-only"><a href="pages/contato.html" class="btn-contato">Contato</a></li>
-          <li class="mobile-only"><a href="contato.html">Contato</a></li>
-
         </ul>
       </nav>
 
@@ -156,18 +64,19 @@
   </header>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <main class="container content">
-    <h1>Bem-vindo ao meu Portfólio 🚀</h1>
-    <p>
-      Explorando tecnologia, inovação e desenvolvimento constante. Este espaço foi criado para compartilhar meus projetos, contribuições em open source e iniciativas que refletem minha paixão por transformar ideias em soluções.
-    </p>
+  <main>
+  <h1>Bem-vindo ao meu Portfólio 🚀</h1>
+  <p>
+    Explorando tecnologia, inovação e desenvolvimento constante. Este espaço foi criado
+    para compartilhar meus projetos, contribuições em open source e iniciativas que refletem
+    minha paixão por transformar ideias em soluções.
+  </p>
 
-    <!-- Galeria de imagens -->
-    <section class="image-gallery" aria-label="Galeria de imagens dos projetos em destaque">
-      <img src="img/LadoEsquerdo.png" alt="Prévia do projeto exibido à esquerda">
-      <img src="img/LadoDireito.png" alt="Prévia do projeto exibido à direita">
-    </section>
-  </main>
+  <div class="hero-imgs">
+    <img src="img/LadoEsquerdo.png" alt="Parte esquerda do portfólio">
+    <img src="img/LadoDireito.png" alt="Parte direita do portfólio">
+  </div>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer">

@@ -1,10 +1,17 @@
 const API_KEY = '3d3809c9003b46eca98981784bfcc876';
-
 const noticiasContainer = document.getElementById('noticias');
+const filtroSelect = document.getElementById('filtroNoticias'); // dropdown ou botões
 
-fetch(`https://newsapi.org/v2/everything?q=tecnologia&sortBy=publishedAt&language=pt&apiKey=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => {
+// ====== Busca de Notícias ======
+async function carregarNoticias(categoria = 'tecnologia') {
+  try {
+    noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
+
+    const resp = await fetch(
+      `https://newsapi.org/v2/everything?q=${categoria}&sortBy=publishedAt&language=pt&apiKey=${API_KEY}`
+    );
+    const data = await resp.json();
+
     noticiasContainer.innerHTML = '';
 
     if (!data.articles || data.articles.length === 0) {
@@ -12,24 +19,36 @@ fetch(`https://newsapi.org/v2/everything?q=tecnologia&sortBy=publishedAt&languag
       return;
     }
 
-    data.articles.forEach(noticia => {
+    data.articles.forEach((noticia) => {
       const item = document.createElement('article');
+      item.classList.add('noticia-item');
+
       item.innerHTML = `
-  <img src="${noticia.urlToImage}" alt="Imagem da notícia" style="max-width:100%; height:auto; margin-bottom:10px;" />
-  <h3>${noticia.title}</h3>
-  <p>${noticia.description || 'Sem descrição disponível.'}</p>
-  <a href="${noticia.url}" target="_blank">Leia mais →</a>
-  <hr>
-`;
+        ${noticia.urlToImage ? `<img src="${noticia.urlToImage}" alt="Imagem da notícia" class="noticia-img"/>` : ''}
+        <h3>${noticia.title}</h3>
+        <p>${noticia.description || 'Sem descrição disponível.'}</p>
+        <a href="${noticia.url}" target="_blank" rel="noopener noreferrer">Leia mais →</a>
+      `;
       noticiasContainer.appendChild(item);
     });
-  })
-  .catch(error => {
+  } catch (error) {
     noticiasContainer.innerHTML = '<p>Erro ao carregar notícias.</p>';
-    console.error(error);
-  });
+    console.error('Erro ao buscar notícias:', error);
+  }
+}
 
-  // ====== Menu Hamburguer ======
+// ====== Filtro de Categorias ======
+if (filtroSelect) {
+  filtroSelect.addEventListener('change', (e) => {
+    const categoria = e.target.value;
+    carregarNoticias(categoria);
+  });
+}
+
+// Carregar a primeira vez (padrão: tecnologia)
+carregarNoticias();
+
+// ====== Menu Hamburguer ======
 (function () {
   const btn = document.getElementById('menuToggle');
   const nav = document.getElementById('primary-menu');
@@ -40,6 +59,7 @@ fetch(`https://newsapi.org/v2/everything?q=tecnologia&sortBy=publishedAt&languag
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
     nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('active', !isOpen);
   });
 
   // Fecha ao clicar em um link do menu (mobile)
@@ -48,6 +68,7 @@ fetch(`https://newsapi.org/v2/everything?q=tecnologia&sortBy=publishedAt&languag
     if (!link) return;
     btn.setAttribute('aria-expanded', 'false');
     nav.classList.remove('open');
+    btn.classList.remove('active');
   });
 
   // Fecha com ESC
@@ -55,7 +76,7 @@ fetch(`https://newsapi.org/v2/everything?q=tecnologia&sortBy=publishedAt&languag
     if (e.key === 'Escape') {
       btn.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
+      btn.classList.remove('active');
     }
   });
 })();
-

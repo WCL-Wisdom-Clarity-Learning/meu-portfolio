@@ -22,34 +22,38 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: justify; /* 🔥 Conteúdos dentro do container justificados */
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .site-header {
   background: #0d0d0d;
   padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
 }
 
 .site-header .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap; /* ❌ impede quebra de linha */
+  gap: 1rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex: 0 0 auto;
 }
 
 .logo img {
-  width: 70px; /* aumentada */
+  width: 70px;
   height: auto;
   border-radius: 50%;
-  border: 3px solid #ff6a00; /* contorno laranja */
-  padding: 3px; /* espaço para destacar a borda */
-  background-color: #fff; /* contraste para destacar a logo */
+  border: 3px solid #ff6a00;
+  padding: 3px;
+  background-color: #fff;
 }
 
 .logo span {
@@ -58,20 +62,31 @@ body {
   color: #fff;
 }
 
-/* Menu de navegação */
+/* ===== NAV ===== */
+.menu {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .menu ul {
   display: flex;
   list-style: none;
-  gap: 20px; /* controla espaçamento */
+  gap: 20px;
   margin: 0;
   padding: 0;
-  white-space: nowrap; /* ❌ evita quebra de texto */
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .menu ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ff6600;
 }
 
 .menu ul li a.active {
@@ -85,6 +100,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 0 0 auto;
 }
 
 .social-icons a {
@@ -95,13 +111,12 @@ body {
 }
 
 .social-icons a:hover {
-  color: #28a745; /* Verde */
+  color: #28a745;
 }
 
-/* Botão de contato destacado */
 .btn-contato {
   display: inline-block;
-  background-color: #ff6a00; /* Laranja */
+  background-color: #ff6a00;
   color: #fff;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
@@ -115,13 +130,82 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== MAIN / CONTATO ===== */
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animação hambúrguer → X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-only { display: none; }
+.desktop-only { display: inline-block; }
+
+@media (max-width: 1100px) {
+  .hamburger { display: block; }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #0d1117;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: none;
+    padding: 1rem;
+  }
+
+  .menu.open { display: block; }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+
+  .site-header .wrap {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ===== CONTATO PAGE ===== */
 .contato-container {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
   padding: 4rem 0;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
 }
 
 .contato-info,
@@ -131,6 +215,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   flex: 1 1 45%;
+  text-align: justify;
 }
 
 .contato-info h2,
@@ -138,14 +223,14 @@ body {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #0d1117;
+  text-align: center;
 }
 
 .contato-info h2 span,
 .contato-form h2 span {
-  color: #28a745; /* Verde */
+  color: #28a745;
 }
 
-/* ===== INFORMAÇÕES DE CONTATO ===== */
 .contato-info h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -165,6 +250,7 @@ body {
 
 .contato-redes {
   margin-top: 1rem;
+  text-align: center;
 }
 
 .contato-redes a {
@@ -174,10 +260,9 @@ body {
 }
 
 .contato-redes a:hover {
-  color: #ff6a00; /* Laranja */
+  color: #ff6a00;
 }
 
-/* ===== FORMULÁRIO ===== */
 .form-group {
   display: flex;
   gap: 1rem;
@@ -227,23 +312,14 @@ body {
   box-shadow: 0 0 8px #28a745;
 }
 
-/* ===== STATUS DO FORM ===== */
 .status {
   margin-top: 1rem;
   font-size: 0.95rem;
 }
 
-.status.info {
-  color: #6a0dad;
-}
-
-.status.sucesso {
-  color: #28a745;
-}
-
-.status.erro {
-  color: #dc3545;
-}
+.status.info { color: #6a0dad; }
+.status.sucesso { color: #28a745; }
+.status.erro { color: #dc3545; }
 
 /* ===== FOOTER ===== */
 .site-footer {
@@ -262,165 +338,34 @@ body {
   margin-top: 1rem;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 992px) {
-  .contato-container {
-    flex-direction: column;
-  }
-
-  .form-group {
-    flex-direction: column;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .header-actions {
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .logo span {
-    font-size: 1rem;
-  }
-
-  .social-icons a {
-    font-size: 1rem;
-  }
-
-  .contato-info h2,
-  .contato-form h2 {
-    font-size: 1.5rem;
-  }
-
-  .btn-enviar {
-    width: 100%;
-  }
-}
-
-/* ===== CONTAINER PRINCIPAL ===== */
-.seu-container-principal {
-  width: 90%;
-  max-width: 1200px;
+/* ===== CENTRALIZAÇÃO E JUSTIFICAÇÃO GLOBAL ===== */
+main {
+  max-width: 900px;
   margin: 0 auto;
+  padding: 1rem;
+  text-align: justify;
 }
 
-/* Botão voltar */
-.btn-back {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+main h1 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.btn-back:hover {
-  background: linear-gradient(135deg, #2575fc, #6a11cb);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+main p {
+  margin-bottom: 2rem;
 }
 
-/* Menu de navegação */
-.menu ul {
+/* Container das imagens */
+.hero-imgs {
   display: flex;
-  list-style: none;
-  gap: 20px; /* controla espaçamento */
-  margin: 0;
-  padding: 0;
-  white-space: nowrap; /* ❌ evita quebra de texto */
+  justify-content: center; /* Centraliza no meio */
+  gap: 0.5rem; /* sem espaço entre elas */
 }
 
-.menu ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.menu ul li a.active {
-  color: #ff6600;
-  font-weight: 700;
-  border-bottom: 2px solid #ff6600;
-}
-
-
-/* Após aqui foi inserido novamente para incorporar o menu amburguer */
-/* ====== NAV: impedir quebra em desktop e dar espaço p/ contrair ====== */
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem; /* espaço controlado entre logo, menu e ações */
-}
-
-.logo { flex: 0 0 auto; }
-.menu { flex: 1 1 auto; min-width: 0; }   /* permite contrair sem quebrar linha */
-.header-actions { flex: 0 0 auto; }
-
-/* Mantém todos os itens numa linha em telas largas */
-.menu ul {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap;      /* <— força a não quebrar em desktop */
-  overflow: hidden;       /* evita “vazar” */
-  white-space: nowrap;
-}
-
-/* Hambúrguer - visível só no mobile */
-.hamburger {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-.hamburger span {
+.hero-imgs img {
+  max-width: 100%;
+  height: auto;
   display: block;
-  width: 26px;
-  height: 3px;
-  margin: 5px 0;
-  background: #fff; /* visível no fundo escuro */
+  border-radius: 8px;
 }
 
-/* Oculta/mostra itens por device */
-.mobile-only { display: none; }
-.desktop-only { display: inline-block; }
-
-/* ====== MOBILE ====== */
-@media (max-width: 1100px) {
-  .hamburger { display: block; }
-
-  /* Oculta botão Contato no topo */
-  .desktop-only { display: none; }
-
-  /* Mostra o Contato dentro do menu */
-  .mobile-only { display: block; }
-
-  /* Menu vira dropdown */
-  .menu {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: #0d1117;
-    border-top: 1px solid rgba(255,255,255,.08);
-    display: none;
-    padding: 1rem;
-  }
-  .menu.open { display: block; }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .site-header .wrap {
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-}

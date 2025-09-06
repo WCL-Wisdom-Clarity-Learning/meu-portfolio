@@ -1,3 +1,16 @@
+<!-- Filtro de categorias -->
+<div class="filtro-container">
+  <label for="filtroNoticias">Filtrar por categoria:</label>
+  <select id="filtroNoticias">
+    <option value="tecnologia" selected>Tecnologia</option>
+    <option value="ciencia">Ciência</option>
+    <option value="negocios">Negócios</option>
+    <option value="esportes">Esportes</option>
+    <option value="saude">Saúde</option>
+  </select>
+</div>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,11 +18,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notícias | W.C.L 🚀</title>
 
+  <!-- SEO -->
+  <meta name="description" content="Últimas notícias e novidades sobre tecnologia, dados e inovação no portfólio W.C.L 🚀.">
+
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css" />
 
-  <!-- FontAwesome para ícones sociais -->
+  <!-- FontAwesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -25,7 +43,7 @@
 
       <!-- Logo -->
       <div class="logo">
-        <img src="../img/W.C.L.jpg" alt="Logotipo W.C.L" />
+        <img src="../img/W.C.L.jpg" alt="Logotipo W.C.L" loading="lazy"/>
         <span>W.C.L 🚀</span>
       </div>
 
@@ -62,6 +80,7 @@
     <section id="noticias">
       <h1>Últimas Notícias</h1>
       <p class="loading">Carregando notícias...</p>
+      <!-- Notícias serão injetadas via noticias.js -->
     </section>
   </main>
 

@@ -1,4 +1,4 @@
-// Envio assíncrono para o Formspree + feedback na página
+// ====== Envio assíncrono para o Formspree + feedback ======
 const form = document.getElementById('contatoForm');
 const statusEl = document.getElementById('formStatus');
 
@@ -44,6 +44,7 @@ if (form && statusEl) {
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
     nav.classList.toggle('open', !isOpen);
+    btn.classList.toggle('active', !isOpen); // 🔥 animação no botão
   });
 
   // Fecha ao clicar em um link do menu (mobile)
@@ -52,6 +53,7 @@ if (form && statusEl) {
     if (!link) return;
     btn.setAttribute('aria-expanded', 'false');
     nav.classList.remove('open');
+    btn.classList.remove('active');
   });
 
   // Fecha com ESC
@@ -59,8 +61,7 @@ if (form && statusEl) {
     if (e.key === 'Escape') {
       btn.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
+      btn.classList.remove('active');
     }
   });
 })();
-
-

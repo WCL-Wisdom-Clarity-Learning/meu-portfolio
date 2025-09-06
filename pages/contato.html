@@ -77,14 +77,14 @@
     <!-- Formulário -->
     <div class="contato-form">
       <h2><span>📨</span> Mande sua mensagem</h2>
-      <form>
+      <form id="contatoForm" action="https://formspree.io/f/SEU_ENDPOINT" method="POST">
         <div class="form-group">
           <input type="text" name="nome" placeholder="Seu nome" required />
           <input type="email" name="email" placeholder="Seu email" required />
         </div>
         <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
         <button type="submit" class="btn-enviar">Enviar</button>
-        <p class="status info">Todos os campos são obrigatórios.</p>
+        <p id="formStatus" class="status info">Todos os campos são obrigatórios.</p>
       </form>
     </div>
   </main>
@@ -92,7 +92,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-    <div id="ads-space" aria-label="Espaço reservado para anúncios">
+       <div id="ads-space" aria-label="Espaço reservado para anúncios">
       <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
     </div>
   </footer>
@@ -101,3 +101,5 @@
   <script src="../js/script.js" defer></script>
 </body>
 </html>
+
+

@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OpenSource | W.C.L 🚀</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSource | W.C.L 🚀</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Projetos open source desenvolvidos e mantidos por W.C.L 🚀.">
-
-    <!-- Fonte e ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="../css/style.css" />
+  <meta name="description" content="Projetos OpenSource desenvolvidos e mantidos por W.C.L.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=1.0">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="container wrap">
-            <!-- Hambúrguer (mobile) -->
-            <button class="hamburger" id="menuToggle"
-                aria-controls="primary-menu"
-                aria-expanded="false"
-                aria-label="Abrir menu de navegação">
-                <span></span><span></span><span></span>
-            </button>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container wrap">
+      <button class="hamburger" id="menuToggle"
+              aria-controls="primary-menu"
+              aria-expanded="false"
+              aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
 
-            <!-- Logo -->
-            <div class="logo">
-                <img src="../img/W.C.L.jpg" alt="Logotipo oficial da marca W.C.L" loading="lazy" />
-                <span>W.C.L 🚀</span>
-            </div>
+      <div class="logo">
+        <img src="../img/W.C.L.jpg" alt="Logotipo oficial da marca W.C.L" loading="lazy">
+        <span>W.C.L 🚀</span>
+      </div>
 
-            <!-- Menu -->
-            <nav class="menu" id="primary-menu" aria-label="Menu principal">
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="contribuicoes.html">Contribuições</a></li>
-                    <li><a href="opensource.html" class="active">OpenSource</a></li>
-                    <li><a href="projeto1.html">Projeto 1</a></li>
-                    <li><a href="projeto2.html">Projeto 2</a></li>
-                    <li><a href="projeto3.html">Projeto 3</a></li>
-                    <li><a href="noticias.html">Notícias</a></li>
+      <nav class="menu" id="primary-menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="contribuicoes.html">Contribuições</a></li>
+          <li><a href="opensource.html" class="active">OpenSource</a></li>
+          <li><a href="projeto1.html">Projeto 1</a></li>
+          <li><a href="projeto2.html">Projeto 2</a></li>
+          <li><a href="projeto3.html">Projeto 3</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li class="mobile-only"><a href="contato.html" class="btn-contato">Contato</a></li>
+        </ul>
+      </nav>
 
-                    <!-- Contato no MOBILE -->
-                    <li class="mobile-only">
-                        <a href="contato.html" class="btn-contato">Contato</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Ações (desktop) -->
-            <div class="header-actions">
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-
-                <!-- Contato no DESKTOP -->
-                <a class="btn-contato desktop-only" href="contato.html">Contato</a>
-            </div>
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-    </header>
+        <a class="btn-contato desktop-only" href="contato.html">Contato</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="container content">
-        <h1>Projetos Open Source 🚀</h1>
-        <p>Liste aqui seus projetos open-source, repositórios em destaque e contribuições.</p>
-        
-        <section class="opensource-list" aria-label="Projetos Open Source">
-            <h2>Em desenvolvimento...</h2>
-            <img src="../img/DESENVOLVIDOPOR.png" alt="Imagem ilustrativa dos projetos open source" />
-        </section>
-    </main>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container content">
+    <h1>Projetos OpenSource 🌐</h1>
+    <p>
+      Esta seção reúne os projetos de código aberto nos quais contribuo ou mantenho.  
+      Meu foco é desenvolver soluções que impactem positivamente a comunidade de tecnologia e promovam inovação.
+    </p>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-        <div id="ads-space" aria-label="Espaço reservado para anúncios">
-            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
-        </div>
-    </footer>
+    <!-- LISTA DE PROJETOS -->
+    <section class="projects-grid">
+      <article class="project-card">
+        <h2>API de Autenticação Segura</h2>
+        <p>Uma API RESTful em Node.js com JWT, criptografia e integração OAuth.  
+        Criada para ajudar desenvolvedores a integrarem login seguro em seus apps.</p>
+        <a href="#" target="_blank">🔗 Ver no GitHub</a>
+      </article>
 
-    <!-- Scripts -->
-    <script src="../js/script.js" defer></script>
+      <article class="project-card">
+        <h2>Dashboard de Dados</h2>
+        <p>Painel interativo em React + Chart.js para visualização de KPIs em tempo real.  
+        Inclui autenticação e suporte para múltiplos temas.</p>
+        <a href="#" target="_blank">🔗 Ver no GitHub</a>
+     
+      </article>
+
+      <article class="project-card">
+        <h2>Contribuições em Open Source</h2>
+        <p>Correções de bugs, melhorias de performance e documentação em projetos como:
+          <strong>Vue.js, Bootstrap e TensorFlow</strong>.
+        </p>
+        <a href="#" target="_blank">🌍 Perfil no GitHub</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+    <div id="ads-space" aria-label="Espaço reservado para anúncios">
+      <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/script.js" defer></script>
 </body>
 </html>

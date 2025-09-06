@@ -348,3 +348,71 @@ body {
   font-weight: 700;
   border-bottom: 2px solid #ff6600;
 }
+
+
+/* Após aqui foi inserido novamente para incorporar o menu amburguer */
+/* ====== NAV: impedir quebra em desktop e dar espaço p/ contrair ====== */
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; /* espaço controlado entre logo, menu e ações */
+}
+
+.logo { flex: 0 0 auto; }
+.menu { flex: 1 1 auto; min-width: 0; }   /* permite contrair sem quebrar linha */
+.header-actions { flex: 0 0 auto; }
+
+/* Mantém todos os itens numa linha em telas largas */
+.menu ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;      /* <— força a não quebrar em desktop */
+  overflow: hidden;       /* evita “vazar” */
+  white-space: nowrap;
+}
+
+/* ====== Botão Hambúrguer ====== */
+.hamburger {
+  display: none; /* só aparece no mobile */
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* ====== Comportamento Mobile ====== */
+@media (max-width: 1100px) {
+  .hamburger { display: block; }
+
+  /* esconde o menu por padrão no mobile */
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #0d1117;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: none;
+    padding: 0.75rem 1rem;
+  }
+  .menu.open { display: block; }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    white-space: normal; /* pode quebrar em múltiplas linhas dentro do dropdown */
+  }
+}
+
+/* (Opcional) estado visual do hambúrguer quando aberto */
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }

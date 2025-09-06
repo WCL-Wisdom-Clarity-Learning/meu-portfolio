@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notícias | Meu Portfólio</title>
+  <title>Notícias | W.C.L 🚀</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css" />
+
   <!-- FontAwesome para ícones sociais -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -12,8 +15,17 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container wrap">
+      <!-- Botão hamburguer (MOBILE) -->
+      <button class="hamburger" id="menuToggle"
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Logo -->
       <div class="logo">
-        <img src="/img/W.C.L.jpg" alt="Logotipo W.C.L" />
+        <img src="../img/W.C.L.jpg" alt="Logotipo W.C.L" />
         <span>W.C.L 🚀</span>
       </div>
 
@@ -27,23 +39,26 @@
           <li><a href="projeto2.html">Projeto 2</a></li>
           <li><a href="projeto3.html">Projeto 3</a></li>
           <li><a href="noticias.html" class="active">Notícias</a></li>
+          <!-- Contato no MOBILE -->
+          <li class="mobile-only"><a href="contato.html" class="btn-contato">Contato</a></li>
         </ul>
       </nav>
 
-      <!-- Ícones sociais + botão -->
+      <!-- Ações (DESKTOP) -->
       <div class="header-actions">
         <div class="social-icons">
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <a href="contato.html" class="btn-contato">Contato</a>
+        <!-- Contato no DESKTOP -->
+        <a href="contato.html" class="btn-contato desktop-only">Contato</a>
       </div>
     </div>
   </header>
 
   <!-- MAIN -->
-  <main class="container">
+  <main class="container content">
     <section id="noticias">
       <h1>Últimas Notícias</h1>
       <p class="loading">Carregando notícias...</p>
@@ -51,15 +66,15 @@
   </main>
 
   <!-- FOOTER -->
-    <footer class="site-footer">
-        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-        <div id="ads-space" aria-label="Espaço reservado para anúncios">
-            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+    <div id="ads-space" aria-label="Espaço reservado para anúncios">
+      <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+    </div>
+  </footer>
 
   <!-- SCRIPTS -->
-  <script src="../../script.js" defer></script>
+  <script src="../js/script.js" defer></script>
   <script src="noticias.js" defer></script>
 </body>
 </html>

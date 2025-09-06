@@ -372,11 +372,11 @@ body {
   white-space: nowrap;
 }
 
-/* ====== Botão Hambúrguer ====== */
+/* Hambúrguer - visível só no mobile */
 .hamburger {
-  display: none; /* só aparece no mobile */
+  display: none;
   background: transparent;
-  border: 0;
+  border: none;
   cursor: pointer;
   padding: 8px;
 }
@@ -385,15 +385,24 @@ body {
   width: 26px;
   height: 3px;
   margin: 5px 0;
-  background: #fff;
-  transition: transform .3s ease, opacity .3s ease;
+  background: #fff; /* visível no fundo escuro */
 }
 
-/* ====== Comportamento Mobile ====== */
+/* Oculta/mostra itens por device */
+.mobile-only { display: none; }
+.desktop-only { display: inline-block; }
+
+/* ====== MOBILE ====== */
 @media (max-width: 1100px) {
   .hamburger { display: block; }
 
-  /* esconde o menu por padrão no mobile */
+  /* Oculta botão Contato no topo */
+  .desktop-only { display: none; }
+
+  /* Mostra o Contato dentro do menu */
+  .mobile-only { display: block; }
+
+  /* Menu vira dropdown */
   .menu {
     position: absolute;
     top: 100%;
@@ -401,18 +410,17 @@ body {
     background: #0d1117;
     border-top: 1px solid rgba(255,255,255,.08);
     display: none;
-    padding: 0.75rem 1rem;
+    padding: 1rem;
   }
   .menu.open { display: block; }
 
   .menu ul {
     flex-direction: column;
-    gap: 0.5rem;
-    white-space: normal; /* pode quebrar em múltiplas linhas dentro do dropdown */
+    gap: 0.75rem;
+  }
+
+  .site-header .wrap {
+    justify-content: flex-start;
+    gap: 1rem;
   }
 }
-
-/* (Opcional) estado visual do hambúrguer quando aberto */
-.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }

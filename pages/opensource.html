@@ -19,13 +19,22 @@
     <!-- HEADER -->
     <header class="site-header">
         <div class="container wrap">
+            <!-- Hambúrguer (mobile) -->
+            <button class="hamburger" id="menuToggle"
+                aria-controls="primary-menu"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Logo -->
             <div class="logo">
                 <img src="../img/W.C.L.jpg" alt="Logotipo oficial da marca W.C.L" loading="lazy" />
                 <span>W.C.L 🚀</span>
             </div>
 
-            <!-- Navegação -->
-            <nav class="menu" aria-label="Menu principal">
+            <!-- Menu -->
+            <nav class="menu" id="primary-menu" aria-label="Menu principal">
                 <ul>
                     <li><a href="../index.html">Início</a></li>
                     <li><a href="contribuicoes.html">Contribuições</a></li>
@@ -34,17 +43,24 @@
                     <li><a href="projeto2.html">Projeto 2</a></li>
                     <li><a href="projeto3.html">Projeto 3</a></li>
                     <li><a href="noticias.html">Notícias</a></li>
+
+                    <!-- Contato no MOBILE -->
+                    <li class="mobile-only">
+                        <a href="contato.html" class="btn-contato">Contato</a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Ações no cabeçalho -->
+            <!-- Ações (desktop) -->
             <div class="header-actions">
                 <div class="social-icons">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
-                <a class="btn-contato" href="contato.html">Contato</a>
+
+                <!-- Contato no DESKTOP -->
+                <a class="btn-contato desktop-only" href="contato.html">Contato</a>
             </div>
         </div>
     </header>

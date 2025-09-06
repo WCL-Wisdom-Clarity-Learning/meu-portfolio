@@ -2,9 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contribuições – Meu Portfólio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribuições | W.C.L 🚀</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css" />
+
   <!-- Fonte e ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,6 +16,14 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container wrap">
+      <!-- Botão Hamburguer (mobile) -->
+      <button class="hamburger" id="menuToggle"
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
       <!-- Logo -->
       <div class="logo">
         <img src="../img/W.C.L.jpg" alt="Logotipo W.C.L" loading="lazy" />
@@ -20,7 +31,7 @@
       </div>
 
       <!-- Navegação -->
-      <nav class="menu" aria-label="Menu principal">
+      <nav class="menu" id="primary-menu" aria-label="Menu principal">
         <ul>
           <li><a href="../index.html">Início</a></li>
           <li><a href="contribuicoes.html" class="active">Contribuições</a></li>
@@ -29,17 +40,20 @@
           <li><a href="projeto2.html">Projeto 2</a></li>
           <li><a href="projeto3.html">Projeto 3</a></li>
           <li><a href="noticias.html">Notícias</a></li>
+          <!-- Contato dentro do menu (MOBILE) -->
+          <li class="mobile-only"><a href="contato.html" class="btn-contato">Contato</a></li>
         </ul>
       </nav>
 
-      <!-- Ações -->
+      <!-- Ações (DESKTOP) -->
       <div class="header-actions">
         <div class="social-icons">
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <a class="btn-contato" href="contato.html">Contato</a>
+        <!-- Contato no DESKTOP -->
+        <a class="btn-contato desktop-only" href="contato.html">Contato</a>
       </div>
     </div>
   </header>
@@ -51,8 +65,7 @@
 
     <section class="projeto">
       <h2>Projeto Power BI – Análise de Vendas</h2>
-      <h3>Painel desenvolvido com Power BI para análise de dados de vendas por região, produto e tempo.</h3>
-      <br>
+      <p>Painel desenvolvido com Power BI para análise de dados de vendas por região, produto e tempo.</p>
 
       <iframe 
         title="Relatório Power BI" 
@@ -66,14 +79,14 @@
   </main>
 
   <!-- FOOTER -->
-    <footer class="site-footer">
-        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-        <div id="ads-space" aria-label="Espaço reservado para anúncios">
-            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+    <div id="ads-space" aria-label="Espaço reservado para anúncios">
+      <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="../js/script.js" defer></script>
+  <!-- Scripts -->
+  <script src="../js/script.js" defer></script>
 </body>
 </html>

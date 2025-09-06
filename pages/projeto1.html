@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projeto 1 – Meu Portfólio</title>
+  <title>Projeto 1 | W.C.L 🚀</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css" />
+
   <!-- Fonte e ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,14 +16,22 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container wrap">
+      <!-- Botão Hamburguer (MOBILE) -->
+      <button class="hamburger" id="menuToggle"
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
       <!-- Logo -->
       <div class="logo">
-        <img src="/img/W.C.L.jpg" alt="Logotipo W.C.L" loading="lazy" />
+        <img src="../img/W.C.L.jpg" alt="Logotipo W.C.L" loading="lazy" />
         <span>W.C.L 🚀</span>
       </div>
 
       <!-- Navegação -->
-      <nav class="menu" aria-label="Menu principal">
+      <nav class="menu" id="primary-menu" aria-label="Menu principal">
         <ul>
           <li><a href="../index.html">Início</a></li>
           <li><a href="contribuicoes.html">Contribuições</a></li>
@@ -29,17 +40,20 @@
           <li><a href="projeto2.html">Projeto 2</a></li>
           <li><a href="projeto3.html">Projeto 3</a></li>
           <li><a href="noticias.html">Notícias</a></li>
+          <!-- Contato no MOBILE -->
+          <li class="mobile-only"><a href="contato.html" class="btn-contato">Contato</a></li>
         </ul>
       </nav>
 
-      <!-- Ações -->
+      <!-- Ações (DESKTOP) -->
       <div class="header-actions">
         <div class="social-icons">
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <a class="btn-contato" href="contato.html">Contato</a>
+        <!-- Contato no DESKTOP -->
+        <a class="btn-contato desktop-only" href="contato.html">Contato</a>
       </div>
     </div>
   </header>
@@ -64,12 +78,12 @@
   </main>
 
   <!-- FOOTER -->
-    <footer class="site-footer">
-        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-        <div id="ads-space" aria-label="Espaço reservado para anúncios">
-            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+    <div id="ads-space" aria-label="Espaço reservado para anúncios">
+      <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="../js/script.js" defer></script>

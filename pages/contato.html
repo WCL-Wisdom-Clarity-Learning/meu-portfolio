@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Meu Portfólio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- FontAwesome para ícones sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container wrap">
+      <div class="logo">
+        <img src="/img/W.C.L.jpg" alt="Logotipo W.C.L" />
+        <span>W.C.L 🚀</span>
+      </div>
+
+      <nav class="menu" id="primary-menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="contribuicoes.html">Contribuições</a></li>
+          <li><a href="opensource.html">OpenSource</a></li>
+          <li><a href="projeto1.html">Projeto 1</a></li>
+          <li><a href="projeto2.html">Projeto 2</a></li>
+          <li><a href="projeto3.html">Projeto 3</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container contato-container">
+    <div class="contato-info">
+      <h2><span>📩</span> Entre em contato</h2>
+      <h3>Email</h3>
+      <p><a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
+
+      <h3>Telefone</h3>
+      <p>(00) 00000-0000</p>
+
+      <div class="contato-redes">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="contato-form">
+      <h2><span>📨</span> Mande sua mensagem</h2>
+      <form>
+        <div class="form-group">
+          <input type="text" name="nome" placeholder="Seu nome" required />
+          <input type="email" name="email" placeholder="Seu email" required />
+        </div>
+        <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+        <button type="submit" class="btn-enviar">Enviar</button>
+        <p class="status info">Todos os campos são obrigatórios.</p>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+        <div id="ads-space" aria-label="Espaço reservado para anúncios">
+            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../script.js" defer></script>
+</body>
+</html>

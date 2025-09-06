@@ -1,69 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | W.C.L 🚀</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfólio de W.C.L 🚀 - Projetos, contribuições open source e inovações em tecnologia.">
+
+    <!-- Fonte e ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Ajustes solicitados */
+        .content {
+            text-align: center; /* Centraliza títulos e seções */
+            margin-top: 2rem;
+        }
+
+        .content h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .content p {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: justify; /* Texto justificado */
+            line-height: 1.8;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .image-gallery img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Espaço para Ads */
+        #ads-space {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 2px dashed #ff6a00;
+            border-radius: 8px;
+            background: #fff3e6;
+            font-size: 0.95rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="logo">
-      <img src="img/W.C.L.jpg" alt="Minha Foto">
-      <h1> W.C.L 🚀 </h1> </Fonte></h1>
-    </div>
-    <button id="darkModeToggle">🌙</button>
-  </header>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container wrap">
+            <div class="logo">
+                <img src="img/W.C.L.jpg" alt="Logotipo oficial da marca W.C.L" loading="lazy">
+                <span>W.C.L 🚀</span>
+            </div>
 
-  <!-- Mensagem de boas-vindas -->
-  <section class="welcome">
-    <h2>Olá, Seja bem-vindo!</h2>
-    <p>Este é o meu portfólio.</p>
-  </section>
+            <!-- Navegação -->
+            <nav class="menu" id="primary-menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="pages/contribuicoes.html">Contribuições</a></li>
+                    <li><a href="pages/opensource.html">OpenSource</a></li>
+                    <li><a href="pages/projeto1.html">Projeto 1</a></li>
+                    <li><a href="pages/projeto2.html">Projeto 2</a></li>
+                    <li><a href="pages/projeto3.html">Projeto 3</a></li>
+                    <li><a href="pages/noticias.html">Notícias</a></li>
+                </ul>
+            </nav>
 
-  <!-- Menu de navegação -->
-  <nav>
-    <ul class="menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="pages/opensource.html">Opensorce</a></li>
-      <li><a href="pages/noticias/noticias.html">Ver notícias</a></li>
-      <li><a href="pages/projeto1.html">Projeto1</a></li>
-      <li><a href="pages/projeto2.html">Projeto2</a></li>
-      <li><a href="pages/projeto3.html">Projeto3</a></li>
-      <li><a href="pages/contribuicoes.html">Contribuições</a></li>
-    </ul>
-  </nav>
+            <!-- Ações no cabeçalho -->
+            <div class="header-actions">
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <a class="btn-contato" href="pages/contato.html">Contato</a>
+                <button class="hamburger" id="menuToggle"
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        aria-label="Abrir menu de navegação">
+  <span></span><span></span><span></span>
+</button>
 
-  <!-- Home -->
-  <main id="home">
-    <section class="sobre">
-      <h2>Minha História e Propósito</h2>
-      <h4>
-      <p>
-        Aqui você pode escrever um resumo sobre sua trajetória, experiências e 
-        objetivos profissionais na área de Ciência de Dados e Tecnologia.
-      </p></h4>
-    </section>
+            </div>
+        </div>
+    </header>
 
-    <section class="imagens">
-      <img src="img/CienciaDeDados.png" alt="Ciência de Dados">
-      <img src="img/Tecnologia.png" alt="Tecnologia">
-    </section>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container content">
+        <h1>Bem-vindo ao meu Portfólio 🚀</h1>
+        <p>
+            Explorando tecnologia, inovação e desenvolvimento constante. Este espaço foi criado para compartilhar meus projetos, contribuições em open source e iniciativas que refletem minha paixão por transformar ideias em soluções.
+        </p>
 
-    <section class="links">
-      <a href="https://www.linkedin.com/in/wellington-wcl-dados" target="_blank" class="btn linkedin">LinkedIn</a>
-      <a href="https://github.com/WCL-Wisdom-Clarity-Learning" target="_blank" class="btn github">GitHub</a>
-      <a href="#contato" class="btn contato">Contato</a>
-    </section>
-  </main>
+        <!-- Galeria de imagens lado a lado -->
+        <section class="image-gallery" aria-label="Galeria de imagens dos projetos em destaque">
+            <img src="img/LadoEsquerdo.png" alt="Prévia do projeto exibido à esquerda">
+            <img src="img/LadoDireito.png" alt="Prévia do projeto exibido à direita">
+        </section>
+    </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>"Seu negócio em evidência: espaço exclusivo no rodapé do nosso site!"</p>
-    <p>&copy; 2025 W.C.L 🚀 | Meu Portfólio </p>
-  </footer>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+        <div id="ads-space" aria-label="Espaço reservado para anúncios">
+            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+        </div>
+    </footer>
 
-  <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="./js/script.js" defer></script>
 </body>
 </html>

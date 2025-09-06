@@ -3,23 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OpenSource – Meu Portfólio</title>
-  <link rel="stylesheet" href="../style.css" />
+  <title>Projeto 3 – Meu Portfólio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Fonte e ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header container">
-    <div class="logo">
-      <img src="../img/W.C.L.jpg" alt="Foto de perfil" />
-      <h1>W.C.L 🚀</h1>
-    </div>
-    <div class="header-actions">
-      <button id="darkModeToggle" class="btn btn-dark">🌙</button>
-      <a class="btn" href="../index.html">← Voltar</a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container wrap">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="/img/W.C.L.jpg" alt="Logotipo W.C.L" loading="lazy" />
+        <span>W.C.L 🚀</span>
+      </div>
+
+      <!-- Navegação -->
+      <nav class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="contribuicoes.html">Contribuições</a></li>
+          <li><a href="opensource.html">OpenSource</a></li>
+          <li><a href="projeto1.html">Projeto 1</a></li>
+          <li><a href="projeto2.html">Projeto 2</a></li>
+          <li><a href="projeto3.html" class="active">Projeto 3</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações -->
+      <div class="header-actions">
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <a class="btn-contato" href="contato.html">Contato</a>
+      </div>
     </div>
   </header>
 
-  <main class="content">
-    <h1>Projeto3 Volume por período</h1>
+  <!-- CONTEÚDO -->
+  <main class="container content">
+    <h1>Projeto 3 – Volume por Período</h1>
     <h3>Aqui é possível o monitoramento de forma consolidada.</h3>
     
     <section class="projeto">
@@ -37,12 +64,15 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> 2025 W.C.L 🚀 | Meu Portfólio</p>
-    </div>
-  </footer>
+  <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
+        <div id="ads-space" aria-label="Espaço reservado para anúncios">
+            <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
+        </div>
+    </footer>
 
-  <script src="../script.js" defer></script>
+  <!-- Scripts -->
+  <script src="../js/script.js" defer></script>
 </body>
 </html>

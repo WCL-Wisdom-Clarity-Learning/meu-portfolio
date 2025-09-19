@@ -6,7 +6,7 @@ const fetch = import('node-fetch');
 const cors = import('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const API_KEY = process.env.NEWS_API_KEY;
 
 app.use(cors());

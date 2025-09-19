@@ -1,3 +1,5 @@
+
+// API CHAVE PARA BUSCAR NOTÍCIAS
 const API_KEY = '3d3809c9003b46eca98981784bfcc876';
 const noticiasContainer = document.getElementById('noticias');
 const filtroSelect = document.getElementById('filtroNoticias'); // dropdown ou botões
@@ -62,13 +64,15 @@ carregarNoticias();
     btn.classList.toggle('active', !isOpen);
   });
 
-  // Fecha ao clicar em um link do menu (mobile)
-  nav.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
+    // Fecha ao clicar em um link do menu (mobile)
+  const menuLinks = nav.querySelectorAll('a');
+  menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Ação de fechar o menu
     btn.setAttribute('aria-expanded', 'false');
     nav.classList.remove('open');
     btn.classList.remove('active');
+     });
   });
 
   // Fecha com ESC

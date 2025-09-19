@@ -1,37 +1,25 @@
 
 // API CHAVE PARA BUSCAR NOTÍCIAS
-const API_KEY = '3d3809c9003b46eca98981784bfcc876';
 const noticiasContainer = document.getElementById('noticias');
 const filtroSelect = document.getElementById('filtroNoticias'); // dropdown ou botões
 
-// ====== Busca de Notícias ======
+// ====== CarregarNotícias ======
 async function carregarNoticias(categoria = 'tecnologia') {
   try {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
-    const resp = await fetch(
-      `https://newsapi.org/v2/everything?q=${categoria}&sortBy=publishedAt&language=pt&apiKey=${API_KEY}`
-    );
-    const data = await resp.json();
+    const resp = await fetch(`http://localhost:3000/api/noticias?categoria=${categoria}`);
+    const articles = await resp.json();
 
     noticiasContainer.innerHTML = '';
 
-    if (!data.articles || data.articles.length === 0) {
+    if (!articles || articles.length === 0) {
       noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada no momento.</p>';
       return;
     }
 
-    data.articles.forEach((noticia) => {
-      const item = document.createElement('article');
-      item.classList.add('noticia-item');
-
-      item.innerHTML = `
-        ${noticia.urlToImage ? `<img src="${noticia.urlToImage}" alt="Imagem da notícia" class="noticia-img"/>` : ''}
-        <h3>${noticia.title}</h3>
-        <p>${noticia.description || 'Sem descrição disponível.'}</p>
-        <a href="${noticia.url}" target="_blank" rel="noopener noreferrer">Leia mais →</a>
-      `;
-      noticiasContainer.appendChild(item);
+    articles.forEach((noticia) => {
+      // ... (Resto do seu código para criar o item de notícia)
     });
   } catch (error) {
     noticiasContainer.innerHTML = '<p>Erro ao carregar notícias.</p>';

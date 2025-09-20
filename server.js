@@ -1,9 +1,9 @@
 // Configure o servidor (server.js): Adicione este código ao arquivo.
 // Ele cria uma API simples que recebe a categoria e faz a busca na NewsAPI no lado do servidor.
-import('dotenv').config();
-const express = import('express');
-const fetch = import('node-fetch');
-const cors = import('cors');
+import 'dotenv/config';
+import express from 'express';
+import fetch from 'node-fetch';
+import cors from  'cors';
 
 const app = express();
 const PORT = process.env.PORT || 5000;

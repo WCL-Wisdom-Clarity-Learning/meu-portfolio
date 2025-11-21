@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | W.C.L 🚀</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css?v=1.0">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 <body>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="container wrap">
@@ -24,14 +37,22 @@
           <li><a href="projeto2.html">Projeto 2</a></li>
           <li><a href="projeto3.html">Projeto 3</a></li>
           <li><a href="noticias.html">Notícias</a></li>
-          <!-- Aqui não tem "Contato" porque já estamos nesta página -->
+          <li class="desktop-only"><a href="#" class="btn-contato active">Contato</a></li>
         </ul>
       </nav>
 
-      <!-- Redes sociais -->
+      <!-- Redes sociais + espaço para imagem -->
       <div class="header-actions">
         <div class="social-icons">
-          
+          <a href="https://www.linkedin.com/in/wellington-wcl-dados" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@WCLTechProdutividade" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/WCL-Wisdom-Clarity-Learning" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+        <!-- Espaço para imagem à direita -->
+        <div class="header-image">
+          <!-- Insira sua imagem aqui -->
+          <img src="../img/seu-banner.jpg" alt="Banner ou imagem adicional" style="height:50px; border-radius:6px;">
         </div>
       </div>
     </div>
@@ -39,33 +60,36 @@
 
   <!-- MAIN -->
   <main class="container contato-container">
-    <!-- Informações -->
+    <!-- Informações (esquerda) -->
     <div class="contato-info">
       <h2><span>📩</span> Entre em contato</h2>
 
       <h3>Email</h3>
-      <p><a href="mailto:seuemail@email.com">contat.wcl@gmail.com</a></p>
+      <p><a href="mailto:contat.wcl@gmail.com">contat.wcl@gmail.com</a></p>
 
       <h3>Telefone</h3>
       <p>(11) 9****-0**0</p>
 
+      <h3>Endereço</h3>
+      <p>Rua Exemplo, 123<br>Cidade - Estado</p>
+
       <div class="contato-redes">
         <a href="https://www.linkedin.com/in/wellington-wcl-dados"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@WCLTechProdutividade" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://github.com/WCL-Wisdom-Clarity-Learning"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@WCLTechProdutividade" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/WCL-Wisdom-Clarity-Learning"><i class="fab fa-github"></i></a>
       </div>
     </div>
 
-    <!-- Formulário -->
+    <!-- Formulário (direita) -->
     <div class="contato-form">
       <h2><span>📨</span> Mande sua mensagem</h2>
       <form id="contatoForm" action="https://formspree.io/f/xyzdnwql" method="POST">
         <div class="form-group">
-          <input type="text" name="nome" placeholder="Seu nome" required="">
-          <input type="email" name="email" placeholder="Seu email" required="">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu email" required>
         </div>
-        <textarea name="mensagem" placeholder="Digite sua mensagem..." required=""></textarea>
+        <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
         <button type="submit" class="btn-enviar">Enviar</button>
         <p id="formStatus" class="status info">Todos os campos são obrigatórios.</p>
       </form>
@@ -75,15 +99,16 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>© <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
-       <div id="ads-space" aria-label="Espaço reservado para anúncios">
+    <div id="ads-space" aria-label="Espaço reservado para anúncios">
       <p><strong>Espaço para Ads:</strong> Cole seu script aqui</p>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="../js/script.js" defer=""></script>
-
-
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../js/script.js" defer></script>
 
 </body>
+</html>

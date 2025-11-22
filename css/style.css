@@ -369,3 +369,18 @@ main p {
   border-radius: 8px;
 }
 
+/* ==== Correção de layout das imagens de notícias ==== */
+
+.noticia-item {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.noticia-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}

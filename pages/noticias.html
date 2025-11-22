@@ -1,16 +1,3 @@
-<!-- Filtro de categorias -->
-<div class="filtro-container">
-  <label for="filtroNoticias">Filtrar por categoria:</label>
-  <select id="filtroNoticias">
-    <option value="tecnologia" selected>Tecnologia</option>
-    <option value="ciencia">Ciência</option>
-    <option value="negocios">Negócios</option>
-    <option value="esportes">Esportes</option>
-    <option value="saude">Saúde</option>
-  </select>
-</div>
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,12 +65,26 @@
 
   <!-- MAIN -->
   <main class="container content">
-    <section id="noticias">
-      <h1>Últimas Notícias</h1>
-      <p class="loading">Carregando notícias...</p>
-      <!-- Notícias serão injetadas via noticias.js -->
-    </section>
-  </main>
+
+  <!-- Filtro de categorias -->
+  <div class="filtro-container">
+    <label for="filtroNoticias">Filtrar por categoria:</label>
+    <select id="filtroNoticias">
+      <option value="tecnologia" selected>Tecnologia</option>
+      <option value="ciencia">Ciência</option>
+      <option value="negocios">Negócios</option>
+      <option value="esportes">Esportes</option>
+      <option value="saude">Saúde</option>
+    </select>
+  </div>
+
+  <section id="noticias">
+    <h1>Últimas Notícias</h1>
+    <p class="loading">Carregando notícias...</p>
+  </section>
+
+</main>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">

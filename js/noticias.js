@@ -8,7 +8,7 @@ async function carregarNoticias(categoria = 'tecnologia') {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
     const resp = await fetch(`http://localhost:5000/api/noticias?categoria=${categoria}`);
-const data = await resp.json();
+
 
     noticiasContainer.innerHTML = '';
 

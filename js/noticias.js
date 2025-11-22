@@ -1,4 +1,3 @@
-const API_KEY = '3d3809c9003b46eca98981784bfcc876';
 const noticiasContainer = document.getElementById('noticias');
 const filtroSelect = document.getElementById('filtroNoticias'); // dropdown ou botões
 
@@ -7,17 +6,19 @@ async function carregarNoticias(categoria = 'tecnologia') {
   try {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
+    // 🔥 ROTA CORRETA
     const resp = await fetch(`http://localhost:5000/api/noticias?categoria=${categoria}`);
-
+    const data = await resp.json();
 
     noticiasContainer.innerHTML = '';
 
-    if (!data.articles || data.articles.length === 0) {
+    // 🔥 O SERVER JÁ DEVOLVE DIRETAMENTE O ARRAY DE NOTÍCIAS
+    if (!data || data.length === 0) {
       noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada no momento.</p>';
       return;
     }
 
-    data.articles.forEach((noticia) => {
+    data.forEach((noticia) => {
       const item = document.createElement('article');
       item.classList.add('noticia-item');
 
@@ -60,7 +61,6 @@ carregarNoticias();
     btn.classList.toggle('active', !isOpen);
   });
 
-  // Fecha ao clicar em um link do menu (mobile)
   nav.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
@@ -69,7 +69,6 @@ carregarNoticias();
     btn.classList.remove('active');
   });
 
-  // Fecha com ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       btn.setAttribute('aria-expanded', 'false');

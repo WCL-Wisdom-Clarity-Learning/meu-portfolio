@@ -7,10 +7,8 @@ async function carregarNoticias(categoria = 'tecnologia') {
   try {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
-    const resp = await fetch(
-      `https://newsapi.org/v2/everything?q=${categoria}&sortBy=publishedAt&language=pt&apiKey=${API_KEY}`
-    );
-    const data = await resp.json();
+    const resp = await fetch(`/api/noticias?categoria=${categoria}`);
+const data = await resp.json();
 
     noticiasContainer.innerHTML = '';
 

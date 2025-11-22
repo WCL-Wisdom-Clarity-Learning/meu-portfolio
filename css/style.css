@@ -384,3 +384,76 @@ main p {
   border-radius: 10px;
   display: block;
 }
+
+/* ===== CARDS DE CONTRIBUIÇÕES ===== */
+.contrib-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contrib-card {
+  background-color: #fff; /* Mantém consistência com o site */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 280px; /* Largura fixa, mas flexível em telas menores */
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contrib-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.contrib-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #0d1117; /* Mantém padrão do site */
+}
+
+.contrib-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contrib-card a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #ff6a00; /* Mesma cor do botão principal */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contrib-card a:hover {
+  background-color: #e55b00;
+  transform: scale(1.05);
+}
+
+.contrib-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 950px) {
+  .contrib-card {
+    width: 45%; /* Dois cards por linha em tablets */
+  }
+}
+
+@media (max-width: 650px) {
+  .contrib-card {
+    width: 100%; /* Um card por linha em mobile */
+  }
+}

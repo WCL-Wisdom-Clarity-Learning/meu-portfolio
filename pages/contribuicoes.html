@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contribuições | W.C.L 🚀</title>
 
+  <!-- SEO -->
   <meta name="description" content="Minhas contribuições em tecnologia e open source.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fontes e ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css?v=1.0">
 </head>
 <body>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="container wrap">
+
+      <!-- Botão hambúrguer -->
       <button class="hamburger" id="menuToggle"
               aria-controls="primary-menu"
               aria-expanded="false"
@@ -21,11 +29,13 @@
         <span></span><span></span><span></span>
       </button>
 
+      <!-- Logo -->
       <div class="logo">
         <img src="../img/W.C.L.jpg" alt="Logotipo oficial da marca W.C.L" loading="lazy">
         <span>W.C.L 🚀</span>
       </div>
 
+      <!-- Menu -->
       <nav class="menu" id="primary-menu" aria-label="Menu principal">
         <ul>
           <li><a href="../index.html">Início</a></li>
@@ -35,26 +45,80 @@
           <li><a href="projeto2.html">Projeto 2</a></li>
           <li><a href="projeto3.html">Projeto 3</a></li>
           <li><a href="noticias.html">Notícias</a></li>
-          <li class="mobile-only"><a href="contato.html" class="btn-contato">Contato</a></li>
+
+          <!-- Contato (MOBILE) -->
+          <li class="mobile-only">
+            <a href="contato.html" class="btn-contato">Contato</a>
+          </li>
         </ul>
       </nav>
 
+      <!-- Redes sociais + Contato (DESKTOP) -->
       <div class="header-actions">
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/wellington-wcl-dados"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@WCLTechProdutividade" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://github.com/WCL-Wisdom-Clarity-Learning"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/wellington-carlos-lima" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/limaedeia/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@WCLTechProdutividade" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/WCL-Wisdom-Clarity-Learning" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
         </div>
+
         <a class="btn-contato desktop-only" href="contato.html">Contato</a>
       </div>
+
     </div>
   </header>
 
   <!-- MAIN -->
   <main class="container content">
     <h1>Minhas Contribuições 🚀</h1>
-    <p>Aqui você encontra minhas colaborações em projetos de tecnologia, artigos publicados e iniciativas em comunidades open source.</p>
+    <p>Aqui você encontra colaborações em projetos de tecnologia, artigos publicados e iniciativas em comunidades open source.</p>
+
+    <!-- NOVA SEÇÃO DE CARDS -->
+    <div class="contrib-cards">
+
+      <!-- Card 1 -->
+      <div class="contrib-card">
+        <img src="../img/projeto1.png" alt="Projeto 1">
+        <h3>Projeto Web Pessoal</h3>
+        <p>Desenvolvi meu portfólio pessoal usando HTML, CSS e JS, mostrando projetos e contribuições.</p>
+        <a href="projeto1.html" target="_blank">Ver Projeto</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="contrib-card">
+        <img src="../img/projeto2.png" alt="Projeto 2">
+        <h3>Contribuição Open Source</h3>
+        <p>Participei de um repositório GitHub corrigindo bugs e implementando funcionalidades.</p>
+        <a href="https://github.com/WCL-Wisdom-Clarity-Learning" target="_blank">Ver no GitHub</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="contrib-card">
+        <img src="../img/tutorial.png" alt="Tutorial">
+        <h3>Tutoriais Educacionais</h3>
+        <p>Criei tutoriais passo a passo ensinando programação web e automações em diferentes linguagens.</p>
+        <a href="link-do-tutorial" target="_blank">Ver Tutorial</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="contrib-card">
+        <img src="../img/template.png" alt="Template">
+        <h3>Templates e Recursos</h3>
+        <p>Desenvolvi templates, planilhas e recursos visuais para facilitar o trabalho de outros desenvolvedores.</p>
+        <a href="link-do-template" target="_blank">Ver Recursos</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="contrib-card">
+        <img src="../img/resultados.png" alt="Resultados">
+        <h3>Resultados e Impacto</h3>
+        <p>Alguns projetos atingiram grande número de usuários e receberam feedbacks positivos de comunidades.</p>
+        <a href="link-do-resultados" target="_blank">Ver Detalhes</a>
+      </div>
+
+    </div>
+    <!-- FIM DA SEÇÃO DE CARDS -->
+
   </main>
 
   <!-- FOOTER -->
@@ -62,6 +126,7 @@
     <p>&copy; <span id="year"></span> W.C.L 🚀 | Meu Portfólio</p>
   </footer>
 
+  <!-- SCRIPTS -->
   <script src="../js/script.js" defer></script>
 </body>
 </html>

@@ -411,3 +411,36 @@ main p {
   transform: translateY(-8px);
   box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
 }
+
+/* ✅ == CARDS PARA EDITAR TAMANHO E CORES DE FONTES À PARTIR DAQUI ↓ == */
+/* TEXTO DENTRO DOS CARDS */
+.card h3 {
+  color: #ff8c00;      /* Título laranja padrão */
+  font-size: 18px;     /* tamanho do título */
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #e0e0e0;      /* texto claro */
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ✅ MELHORAR CENTRALIZAÇÃO DOS CARDS */
+.cards-container {
+  justify-items: center;
+}
+
+/* ✅ MELHORIA VISUAL OPCIONAL (mais elegante) */
+.card {
+  background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
+}
+
+
+/* ✅ 📱 5. MOBILE PERFEITO */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    min-height: auto;
+  }
+}

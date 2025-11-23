@@ -385,38 +385,8 @@ main p {
   display: block;
 }
 
-/* == CARDS == */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 40px auto;
-  max-width: 1100px;
-  padding: 0 15px;
-}
+/* ================= CARDS CONTRIBUIÇÕES ================= */
 
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-/* À partir daqui cards renovado */
-.card {
-  background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
-  border: 2px solid #ff8c00;
-  border-radius: 12px;
-  padding: 25px;
-  transition: all 0.3s ease;
-
-  /* ✅ PADRONIZAÇÃO AQUI */
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-/* == CARDS == */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -431,47 +401,65 @@ main p {
   text-decoration: none;
   color: inherit;
   display: block;
+  width: 100%;
 }
 
+/* CARD PRINCIPAL */
 .card {
   background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
   border: 2px solid #ff8c00;
-  border-radius: 12px;
-  padding: 25px;
+  border-radius: 14px;
+  padding: 22px;
   transition: all 0.3s ease;
 
-  min-height: 180px;
+  min-height: 190px;
+  max-width: 100%;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* EFEITO HOVER */
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 0 28px rgba(255, 140, 0, 0.45);
 }
 
-/* TEXTO DENTRO DO CARD */
+/* TITULO DO CARD */
 .card h3 {
   color: #ff8c00;
   font-size: 18px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
+/* TEXTO DO CARD */
 .card p {
   color: #e0e0e0;
   font-size: 14px;
   line-height: 1.6;
 }
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+/* LINK "VER PROJETO" */
+.card span {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #ff8c00;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .cards-container {
     grid-template-columns: 1fr;
-  }
-
-  .card {
-    max-width: 100%;
-    min-height: auto;
   }
 }

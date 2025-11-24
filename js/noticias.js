@@ -7,7 +7,7 @@ async function carregarNoticias(categoria = 'tecnologia') {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
     // 🔥 ROTA CORRETA
-    const resp = await fetch(`http://localhost:5000/api/noticias?categoria=${categoria}`);
+    const resp = await fetch(`https://newsapi.org/v2/top-headlines?country=br&category=${categoria}&apiKey=SUA_API_KEY`);
     const data = await resp.json();
 
     noticiasContainer.innerHTML = '';
@@ -26,22 +26,20 @@ async function carregarNoticias(categoria = 'tecnologia') {
         ${noticia.urlToImage ? `<img src="${noticia.urlToImage}" alt="Imagem da notícia" class="noticia-img"/>` : ''}
         <h3>${noticia.title}</h3>
         <p>${noticia.description || 'Sem descrição disponível.'}</p>
-        <a href="${noticia.url}" target="_blank" rel="noopener noreferrer">Leia mais →</a>
+        <a href="${noticia.url}" target="_blank">Leia mais →</a>
       `;
       noticiasContainer.appendChild(item);
     });
+
   } catch (error) {
     noticiasContainer.innerHTML = '<p>Erro ao carregar notícias.</p>';
-    console.error('Erro ao buscar notícias:', error);
+    console.error( error);
   }
 }
 
 // ====== Filtro de Categorias ======
 if (filtroSelect) {
-  filtroSelect.addEventListener('change', (e) => {
-    const categoria = e.target.value;
-    carregarNoticias(categoria);
-  });
+  filtroSelect.addEventListener('change', e => carregarNoticias(e.target.value));
 }
 
 // Carregar a primeira vez (padrão: tecnologia)

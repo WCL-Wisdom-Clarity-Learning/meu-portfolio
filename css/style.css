@@ -481,7 +481,7 @@ main p {
 /* IMAGEM DO CARD */
 .card-image {
     width: 100%;
-    height: 180px;          /* altura padrão para todos os cards */
+    height: 160px;          /* altura padrão para todos os cards */
     object-fit: cover;      /* mantém proporção e corta excesso */
     display: block;
     border-radius: 8px;

@@ -33,7 +33,7 @@ async function carregarNoticias(categoria = 'tecnologia') {
 
   } catch (error) {
     noticiasContainer.innerHTML = '<p>Erro ao carregar notícias.</p>';
-    console.error( error);
+    console.error("Em desenvolvimento" - error);
   }
 }
 

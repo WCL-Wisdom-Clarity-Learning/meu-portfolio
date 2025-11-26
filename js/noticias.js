@@ -6,19 +6,17 @@ async function carregarNoticias(categoria = 'tecnologia') {
   try {
     noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
-    // 🔥 ROTA CORRETA
-    const resp = await fetch(`https://newsapi.org/v2/top-headlines?country=br&category=${categoria}&apiKey=SUA_API_KEY`);
+    const resp = await fetch(`/api/noticias?categoria=${categoria}`);
     const data = await resp.json();
 
     noticiasContainer.innerHTML = '';
 
-    // 🔥 O SERVER JÁ DEVOLVE DIRETAMENTE O ARRAY DE NOTÍCIAS
-    if (!data || data.length === 0) {
+    if (!data.articles || data.articles.length === 0) {
       noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada no momento.</p>';
       return;
     }
 
-    data.forEach((noticia) => {
+    data.articles.forEach((noticia) => {
       const item = document.createElement('article');
       item.classList.add('noticia-item');
 
@@ -33,7 +31,7 @@ async function carregarNoticias(categoria = 'tecnologia') {
 
   } catch (error) {
     noticiasContainer.innerHTML = '<p>Erro ao carregar notícias.</p>';
-    console.error("Em desenvolvimento" - error);
+    console.error("Erro ao carregar notícias:", error);
   }
 }
 

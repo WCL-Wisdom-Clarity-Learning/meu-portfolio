@@ -1,4 +1,4 @@
-const noticiasContainer = document.getElementById('noticias');
+const noticiasContainer = document.getElementById('lista-noticias');
 const filtroSelect = document.getElementById('filtroNoticias'); // dropdown ou botões
 
 // ====== Busca de Notícias ======

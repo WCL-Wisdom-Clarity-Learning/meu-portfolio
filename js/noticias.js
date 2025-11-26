@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const noticiasContainer = document.getElementById('lista-noticias');
   const filtroSelect = document.getElementById('filtroNoticias');
 
-  async function carregarNoticias(categoria) {
+  async function carregarNoticias(categoria = 'tecnologia') {
     try {
       noticiasContainer.innerHTML = '<p class="loading">Carregando notícias...</p>';
 
@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       noticiasContainer.innerHTML = '';
 
-      const noticias = data.noticias || data.articles || data;
+      const noticias = Array.isArray(data)
+        ? data
+        : data.noticias || data.articles || [];
 
       if (!Array.isArray(noticias) || noticias.length === 0) {
         noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
@@ -28,8 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const artigo = document.createElement('article');
         artigo.classList.add('noticia-item');
 
+        // ✅ Correção de URLs HTTP para HTTPS (evita bloqueio do navegador)
+        const imagem = noticia.urlToImage
+          ? noticia.urlToImage.replace('http://', 'https://')
+          : '';
+
         artigo.innerHTML = `
-          ${noticia.urlToImage ? `<img src="${noticia.urlToImage}" alt="${noticia.title}" class="noticia-img" loading="lazy">` : ''}
+          ${imagem ? `<img src="${imagem}" alt="${noticia.title || 'Notícia'}" class="noticia-img" loading="lazy" onerror="this.style.display='none'">` : ''}
           <h3>${noticia.title || 'Título indisponível'}</h3>
           <p>${noticia.description || 'Sem descrição disponível.'}</p>
           <a href="${noticia.url}" target="_blank" rel="noopener noreferrer">Leia mais →</a>
@@ -44,14 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Listener do filtro
-  if (filtroSelect) {
-    filtroSelect.addEventListener('change', () => {
-      carregarNoticias(filtroSelect.value);
-    });
-
-    // Carrega respeitando o valor inicial do select
+  // ✅ Listener do filtro
+if (filtroSelect) {
+  filtroSelect.addEventListener('change', () => {
     carregarNoticias(filtroSelect.value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  
+    // ✅ Carregamento inicial respeitando o select
+    carregarNoticias(filtroSelect.value);
+  } else {
+    // fallback seguro caso o select não exista
+    carregarNoticias();
   }
 
 });
